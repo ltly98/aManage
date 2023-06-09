@@ -1,0 +1,2 @@
+# aManage
+my animation management
