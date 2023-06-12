@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css"
           href={{url_for('static',filename='assets/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css')}}/>
-    <title>主页</title>
+    <title>设置</title>
     <style>
         html,
         body {
@@ -23,7 +23,6 @@
         }
 
 
-
     </style>
 </head>
 
@@ -34,7 +33,7 @@
         <div class="col-2 p-0 text-white bg-black vh-100 d-flex flex-column justify-content-around align-content-center">
             <div class="sidebar-top">动漫信息管理</div>
             <ul class="nav flex-column">
-                <li class="nav-item bg-primary">
+                <li class="nav-item">
                     <a href="/" class="nav-link text-white">主页</a>
                 </li>
                 <li class="nav-item">
@@ -43,7 +42,7 @@
                 <li class="nav-item">
                     <a href="/t_anime" class="nav-link text-white">临时信息库</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item bg-primary">
                     <a href="/setting" class="nav-link text-white">设置</a>
                 </li>
             </ul>
@@ -52,7 +51,8 @@
         <div class="col-10 text-black bg-white vh-100 d-flex flex-column justify-content-sm-start align-content-center">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb p-3">
-                    <li class="breadcrumb-item active" aria-current="page">主页</li>
+                    <li class="breadcrumb-item"><a href="/">主页</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">设置</li>
                 </ol>
             </nav>
         </div>
