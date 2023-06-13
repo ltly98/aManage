@@ -12,16 +12,29 @@
         body {
             height: 100%;
         }
-        .sidebar-top{
+
+        .sidebar-top {
             font-size: 1.5rem;
         }
-        .sidebar-end{
+
+        .sidebar-end {
             font-size: 0.6rem;
         }
-        a:hover{
+
+        a:hover {
             transform: scale(1.1);
         }
 
+        .card-subtitle {
+            font-size: 0.6rem;
+        }
+
+        #year-statistics,
+        #tag-statistics {
+            height: 400px;
+            width: 400px;
+            margin: 0 auto;
+        }
 
 
     </style>
@@ -31,7 +44,8 @@
 
 <div class="container-fluid text-center">
     <div class="row">
-        <div class="col-2 p-0 text-white bg-black vh-100 d-flex flex-column justify-content-around align-content-center">
+        <div
+                class="col-2 p-0 text-white bg-black vh-100 d-flex flex-column justify-content-around align-content-center">
             <div class="sidebar-top">动漫信息管理</div>
             <ul class="nav flex-column">
                 <li class="nav-item bg-primary">
@@ -49,17 +63,143 @@
             </ul>
             <div class="sidebar-end">&copy; 2023 凉亭落叶</div>
         </div>
-        <div class="col-10 text-black bg-white vh-100 d-flex flex-column justify-content-sm-start align-content-center">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb p-3">
-                    <li class="breadcrumb-item active" aria-current="page">主页</li>
-                </ol>
-            </nav>
+        <div
+                class="col-10 text-black bg-white vh-100 d-flex flex-column justify-content-sm-start align-content-center">
+            <div class="card m-3 p-0 vh-100 bg-light">
+
+                <div class="row m-0 p-0 flex-column justify-content-center align-content-center">
+                    <div class="col my-2">
+                        <nav class="" aria-label="breadcrumb">
+                            <ol class="breadcrumb py-3 px-4">
+                                <li class="breadcrumb-item active" aria-current="page">主页</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col my-2">
+                        <div class="row p-0 m-0">
+                            <div class="col mx-lg-3">
+                                <div class="card bg-primary text-white">
+                                    <h4 class="card-title my-2">150</h4>
+                                    <div class="card-subtitle my-2">信息总数</div>
+                                </div>
+                            </div>
+                            <div class="col mx-lg-3">
+                                <div class="card bg-success text-white">
+                                    <h4 class="card-title my-2">123</h4>
+                                    <div class="card-subtitle my-2">已看总数</div>
+                                </div>
+                            </div>
+                            <div class="col mx-3">
+                                <div class="card m-0 p-0 bg-secondary text-white">
+                                    <h4 class="card-title my-2">24</h4>
+                                    <div class="card-subtitle my-2">临时总数</div>
+                                </div>
+                            </div>
+                            <div class="col mx-3">
+                                <div class="card m-0 p-0 bg-danger text-white">
+                                    <h4 class="card-title my-2">3</h4>
+                                    <div class="card-subtitle my-2">放弃总数</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col my-5">
+                        <div class="row p-0 m-0 flex-row justify-content-center">
+                            <div class="col mx-lg-3">
+                                <div class="card-body" id="year-statistics"></div>
+                            </div>
+                            <div class="col mx-3">
+                                <div class="card-body" id="tag-statistics"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <script src={{url_for('static',filename='assets/bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.min.js')}}></script>
+<script src={{url_for('static',filename='assets/echarts_4.7.0.min.js')}}></script>
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('year-statistics'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        title: { text: '已看信息统计' },
+        xAxis: {
+            type: 'category',
+            data: ['2000以前', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                data: [120, 200, 150, 80, 70, 110, 50, 60, 110, 60, 40],
+                type: 'bar'
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+
+</script>
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('tag-statistics'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        title: { text: '标签信息统计' },
+        tooltip: {
+            trigger: 'item'
+        },
+        legend: {
+            top: '5%',
+            left: 'center'
+        },
+        series: [
+            {
+                type: 'pie',
+                radius: ['40%', '70%'],
+                avoidLabelOverlap: false,
+                itemStyle: {
+                    borderRadius: 10,
+                    borderColor: '#fff',
+                    borderWidth: 2
+                },
+                label: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: 40,
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: false
+                },
+                data: [
+                    { value: 1048, name: '后宫' },
+                    { value: 735, name: '百合' },
+                    { value: 580, name: '恋爱' },
+                    { value: 484, name: '日常' },
+                    { value: 300, name: '其它' }
+                ]
+            }
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+
+</script>
 </body>
 
 </html>
