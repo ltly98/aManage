@@ -48,13 +48,37 @@
             </ul>
             <div class="sidebar-end">&copy; 2023 凉亭落叶</div>
         </div>
-        <div class="col-10 text-black bg-white vh-100 d-flex flex-column justify-content-sm-start align-content-center">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb p-3">
-                    <li class="breadcrumb-item"><a href="/">主页</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">设置</li>
-                </ol>
-            </nav>
+        <div class="col-10 text-black bg-white vh-100 d-flex flex-column">
+            <div class="card m-3 p-0 vh-100 bg-light">
+                <div class="row m-0 p-0 d-flex flex-column">
+                    <div class="col my-2">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb py-3 px-4">
+                              <li class="breadcrumb-item"><a href="#">主页</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">设置</li>
+                            </ol>
+                          </nav>
+                    </div>
+                    <div class="col my-2">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">图片路径</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="文件夹路径...">
+                          </div>
+                    </div>
+                    <div class="col my-2">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">数据库路径</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="数据库文件路径...">
+                          </div>
+                    </div>
+                    <div class="col my-2">
+                        <div class="d-grid gap-2 col-3 mx-auto">
+                            <button type="submit" class="btn btn-primary m-2">保存</button>
+                            <button type="reset" class="btn btn-primary m-2">重置</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

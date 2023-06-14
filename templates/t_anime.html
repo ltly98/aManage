@@ -47,15 +47,84 @@
             </ul>
             <div class="sidebar-end">&copy; 2023 凉亭落叶</div>
         </div>
-        <div class="col-10 text-black bg-white vh-100 d-flex flex-column justify-content-sm-start align-content-center">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb p-3">
-                    <li class="breadcrumb-item"><a href="/">主页</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">临时信息库</li>
-                </ol>
-            </nav>
-        </div>
-    </div>
+        <div class="col-10 text-black bg-white vh-100 d-flex flex-column">
+                <div class="card m-3 p-0 vh-100 bg-light">
+                    <div class="row m-0 p-0 flex-column justify-content-center align-content-center">
+                        <div class="col my-2">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb py-3 px-4">
+                                    <li class="breadcrumb-item"><a href="#">主页</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">临时信息库</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="col my-2">
+                            <div class="row p-0 m-0">
+                                <div class="col mx-lg-3">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        年份
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">2020</a></li>
+                                        <li><a class="dropdown-item" href="#">2021</a></li>
+                                        <li><a class="dropdown-item" href="#">2022</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col mx-lg-3">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        月份
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">1月</a></li>
+                                        <li><a class="dropdown-item" href="#">4月</a></li>
+                                        <li><a class="dropdown-item" href="#">7月</a></li>
+                                        <li><a class="dropdown-item" href="#">10月</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col mx-3">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        是否放弃
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">是</a></li>
+                                        <li><a class="dropdown-item" href="#">否</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col my-2">
+                            <ul class="list-group">
+                                <li class="list-group-item">A disabled item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">A fourth item</li>
+                                <li class="list-group-item">And a fifth one</li>
+                            </ul>
+                        </div>
+                        <div class="col my-2">
+                            <nav aria-label="">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item disabled">
+                                        <a class="page-link">上一页</a>
+                                    </li>
+                                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">下一页</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
 </div>
 
 <script src={{url_for('static',filename='assets/bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.min.js')}}></script>
